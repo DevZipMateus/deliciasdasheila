@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Phone } from 'lucide-react';
 
 const WhatsAppButton = () => {
   const [isVisible, setIsVisible] = useState(false);

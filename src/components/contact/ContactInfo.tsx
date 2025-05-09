@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Instagram, Phone, MapPin, Mail, WhatsApp } from 'lucide-react';
+import { Instagram, Phone, MapPin, Mail } from 'lucide-react';
 
 const ContactInfo = ({ setRef }: { setRef: (el: HTMLDivElement | null) => void }) => {
   return (
@@ -27,7 +27,7 @@ const ContactInfo = ({ setRef }: { setRef: (el: HTMLDivElement | null) => void }
           
           <div className="flex items-start gap-4">
             <div className="bg-delicia-lightpink/20 p-3 rounded-full">
-              <WhatsApp className="text-delicia-pink h-5 w-5" />
+              <Phone className="text-delicia-pink h-5 w-5" />
             </div>
             <div>
               <h4 className="font-medium text-delicia-brown">WhatsApp</h4>
@@ -96,7 +96,7 @@ const ContactInfo = ({ setRef }: { setRef: (el: HTMLDivElement | null) => void }
             rel="noopener noreferrer" 
             className="inline-flex items-center gap-2 bg-delicia-pink text-white px-6 py-3 rounded-full hover:bg-delicia-pink/80 transition-colors"
           >
-            <WhatsApp size={18} />
+            <Phone size={18} />
             <span>Fazer pedido</span>
           </a>
         </div>
