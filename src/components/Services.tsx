@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { cn } from "@/lib/utils";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -71,13 +70,7 @@ const Services = () => {
       title: "Pudins",
       description: "Pudins cremosos de diversos sabores, perfeitos para sobremesa.",
       image: "https://images.unsplash.com/photo-1605256107786-c598074d5027?q=80&w=1372&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      id: "cosmeticos",
-      title: "Cosméticos",
-      description: "Linha completa de cosméticos para complementar o seu cuidado pessoal.",
-      image: "https://images.unsplash.com/photo-1571781418606-70265b9cce90?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
-    },
+    }
   ];
 
   const handleProductSelect = (productId: string) => {
