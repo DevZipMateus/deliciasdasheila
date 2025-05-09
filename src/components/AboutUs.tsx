@@ -1,7 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
 import { cn } from "@/lib/utils";
-import { LineChart, BarChart, Trophy } from 'lucide-react';
 
 const AboutUs = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -40,24 +39,6 @@ const AboutUs = () => {
     };
   }, []);
 
-  const features = [
-    {
-      icon: <LineChart className="h-10 w-10 text-accounting-gold" />,
-      title: "Experiência Comprovada",
-      description: "Mais de 15 anos de experiência atendendo empresas de diferentes portes e segmentos."
-    },
-    {
-      icon: <BarChart className="h-10 w-10 text-accounting-gold" />,
-      title: "Atendimento Personalizado",
-      description: "Soluções sob medida para as necessidades específicas da sua empresa e do seu segmento."
-    },
-    {
-      icon: <Trophy className="h-10 w-10 text-accounting-gold" />,
-      title: "Equipe Qualificada",
-      description: "Profissionais especializados e constantemente atualizados com as mudanças fiscais e tributárias."
-    }
-  ];
-
   return (
     <section 
       id="about" 
@@ -70,52 +51,42 @@ const AboutUs = () => {
             Sobre Nós
           </h2>
           <p className="section-subtitle" ref={el => elementsRef.current[1] = el}>
-            Somos um escritório de contabilidade comprometido com a excelência e a transparência nos serviços prestados.
+            Conheça a história da Delicias da Sheila e nossa paixão pela culinária artesanal
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p 
-              className="text-accounting-gray opacity-0" 
+              className="text-delicia-brown opacity-0" 
               ref={el => elementsRef.current[2] = el}
             >
-              Fundada em 2008, a <span className="font-semibold text-accounting-navy">ContaPrecisão</span> nasceu com o propósito de transformar a relação entre empresas e a contabilidade, oferecendo um serviço que vai além dos números.
+              A <span className="font-semibold text-delicia-pink">Delicias da Sheila</span> surgiu em 2022, nascida da paixão de Sheila Pereira Nunes da Silva pela culinária. Tudo começou assistindo vídeos no YouTube e, com o tempo, aprimorando suas habilidades em cursos do SENAI.
             </p>
             <p 
-              className="text-accounting-gray opacity-0" 
+              className="text-delicia-brown opacity-0" 
               ref={el => elementsRef.current[3] = el}
             >
-              Nossa missão é fornecer soluções contábeis claras e estratégicas, auxiliando nossos clientes a tomarem as melhores decisões para o crescimento sustentável de seus negócios.
+              Hoje, oferecemos uma variedade de produtos feitos artesanalmente com muito carinho e dedicação. Nossos principais produtos são pães artesanais, deliciosos bolos, salgados assados e fritos, e pudins irresistíveis.
             </p>
             <p 
-              className="text-accounting-gray opacity-0" 
+              className="text-delicia-brown opacity-0" 
               ref={el => elementsRef.current[4] = el}
             >
-              Trabalhamos com ética, precisão e um profundo compromisso com a satisfação dos nossos clientes, construindo relações de confiança duradouras.
+              Além dos produtos de confeitaria, também oferecemos uma linha de cosméticos para complementar nossa renda e proporcionar mais opções aos nossos clientes.
             </p>
           </div>
 
-          <div className="grid gap-6">
-            {features.map((feature, index) => (
-              <div 
-                key={index} 
-                className="bg-accounting-lightgray/50 p-6 rounded-lg flex items-start space-x-4 opacity-0"
-                ref={el => elementsRef.current[5 + index] = el}
-              >
-                <div className="flex-shrink-0 mt-1">
-                  {feature.icon}
-                </div>
-                <div>
-                  <h3 className="font-display font-semibold text-accounting-navy text-lg mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-accounting-gray">
-                    {feature.description}
-                  </p>
-                </div>
+          <div className="relative h-80 rounded-2xl overflow-hidden opacity-0" ref={el => elementsRef.current[5] = el}>
+            <div className="absolute inset-0 p-2 bg-gradient-to-br from-delicia-pink/20 to-delicia-lightpink/20 rounded-2xl">
+              <div className="w-full h-full rounded-xl overflow-hidden shadow-xl">
+                <img 
+                  src="/lovable-uploads/e2d0ff0c-69a4-4015-8574-280dee19c121.png" 
+                  alt="Delicias da Sheila" 
+                  className="w-full h-full object-cover"
+                />
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>

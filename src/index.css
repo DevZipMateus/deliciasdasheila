@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,32 +8,32 @@
 @layer base {
   :root {
     /* Cores primárias 60% */
-    --background: 215 33% 99%;
-    --foreground: 215 60% 20%;
+    --background: 0 0% 100%;
+    --foreground: 44 24% 24%;
     --card: 0 0% 100%;
-    --card-foreground: 215 60% 20%;
+    --card-foreground: 44 24% 24%;
 
     /* Cores secundárias 30% */
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 215 40% 40%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 40 30% 53%;
-    --accent-foreground: 222 47% 11%;
+    --secondary: 350 100% 90%;
+    --secondary-foreground: 350 80% 60%;
+    --muted: 350 33% 96%;
+    --muted-foreground: 350 40% 50%;
+    --accent: 350 80% 60%;
+    --accent-foreground: 0 0% 100%;
     --popover: 0 0% 100%;
-    --popover-foreground: 215 60% 20%;
+    --popover-foreground: 44 24% 24%;
 
     /* Cores de contraste 10% */
-    --primary: 139 61% 42%;
+    --primary: 350 84% 76%;
     --primary-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
     
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 139 61% 42%;
+    --border: 350 33% 90%;
+    --input: 350 33% 90%;
+    --ring: 350 84% 76%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
   }
 
   html {
@@ -44,6 +44,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "ss01" on, "ss02" on, "cv01" on, "cv03" on;
+    overflow-x: hidden;
   }
 }
 
@@ -88,7 +89,23 @@
     animation-delay: 600ms;
   }
   
-  .blue-gradient {
-    background: linear-gradient(135deg, hsl(215, 60%, 20%) 0%, hsl(215, 40%, 40%) 100%);
+  .pink-gradient {
+    background: linear-gradient(135deg, #FFC0CB 0%, #F19CBB 100%);
+  }
+  
+  .product-card {
+    @apply bg-white rounded-2xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .product-image {
+    @apply w-full h-64 object-cover;
+  }
+  
+  .gallery-container {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+  
+  .gallery-item {
+    @apply rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl;
   }
 }

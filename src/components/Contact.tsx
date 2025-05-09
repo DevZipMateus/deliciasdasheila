@@ -43,7 +43,7 @@ const Contact = () => {
     <section 
       id="contact" 
       ref={sectionRef}
-      className="py-20 bg-secondary/70"
+      className="py-20 bg-delicia-lightpink/20"
     >
       <div className="section-container">
         <div className="text-center mb-16">
@@ -51,8 +51,7 @@ const Contact = () => {
             Entre em Contato
           </h2>
           <p className="section-subtitle" ref={el => elementsRef.current[1] = el}>
-            Estamos disponíveis para atendê-lo através dos nossos canais de comunicação direta. 
-            Entre em contato conosco hoje mesmo.
+            Faça sua encomenda ou tire suas dúvidas pelos nossos canais de atendimento
           </p>
         </div>
 

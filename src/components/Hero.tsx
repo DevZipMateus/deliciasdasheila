@@ -46,32 +46,33 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden"
     >
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-accounting-lightgray/80 to-white"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-delicia-lightpink/30 to-white"></div>
       </div>
       
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <p 
+          <img 
+            src="/lovable-uploads/e2d0ff0c-69a4-4015-8574-280dee19c121.png" 
+            alt="Delicias da Sheila Logo" 
+            className="w-40 h-40 mx-auto mb-6 opacity-0"
             ref={el => elementsRef.current[0] = el}
-            className="text-accounting-gold font-medium mb-3 opacity-0"
-          >
-            Contabilidade de excelência para o seu negócio
-          </p>
+          />
           
           <h1 
             ref={el => elementsRef.current[1] = el}
-            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-accounting-navy leading-tight mb-6 opacity-0"
+            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-delicia-pink leading-tight mb-6 opacity-0"
             style={{ animationDelay: '200ms' }}
           >
-            Simplicidade e precisão para suas finanças
+            Delicias da Sheila
           </h1>
           
           <p 
             ref={el => elementsRef.current[2] = el}
-            className="text-accounting-gray text-lg md:text-xl max-w-2xl mx-auto mb-8 opacity-0"
+            className="text-delicia-brown text-lg md:text-xl max-w-2xl mx-auto mb-8 opacity-0"
             style={{ animationDelay: '400ms' }}
           >
-            Transformamos números complexos em soluções claras. Deixe-nos cuidar da sua contabilidade enquanto você foca no crescimento do seu negócio.
+            Pães, Bolos, Salgados e muito mais! <br />
+            Produtos artesanais feitos com amor e dedicação
           </p>
           
           <div 
@@ -81,23 +82,23 @@ const Hero = () => {
           >
             <a 
               href="#contact" 
-              className="bg-accounting-navy hover:bg-accounting-blue text-white px-6 py-3 rounded-md font-medium transition-colors duration-300"
+              className="bg-delicia-pink hover:bg-delicia-pink/80 text-white px-6 py-3 rounded-full font-medium transition-colors duration-300"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              Fale Conosco
+              Faça seu Pedido
             </a>
             <a 
               href="#services" 
-              className="bg-white hover:bg-accounting-lightgray text-accounting-navy border border-accounting-navy/20 px-6 py-3 rounded-md font-medium transition-colors duration-300"
+              className="bg-white hover:bg-delicia-lightpink/30 text-delicia-brown border border-delicia-pink/20 px-6 py-3 rounded-full font-medium transition-colors duration-300"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              Nossos Serviços
+              Nossos Produtos
             </a>
           </div>
         </div>
@@ -105,7 +106,7 @@ const Hero = () => {
       
       <button
         onClick={scrollToAbout}
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 text-accounting-gray hover:text-accounting-navy transition-colors duration-300 animate-float"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-delicia-pink hover:text-delicia-pink/80 transition-colors duration-300 animate-float"
         aria-label="Scroll down"
       >
         <ArrowDown size={28} />

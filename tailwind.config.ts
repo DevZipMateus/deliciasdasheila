@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,8 +20,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
-				display: ['SF Pro Display', 'Inter', 'sans-serif'],
+				sans: ['Poppins', 'sans-serif'],
+				display: ['Dancing Script', 'cursive'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -56,16 +57,15 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Custom accounting color palette
-				accounting: {
-					navy: 'hsl(215, 60%, 20%)', // Cor base (60%)
-					blue: 'hsl(215, 40%, 40%)', // Cor secundária (30%)
-					lightblue: '#5B7BA5',
-					gray: '#8E9196',
-					lightgray: '#F0F2F5',
-					gold: '#B7995A',
+				// Custom delicia colors palette
+				delicia: {
+					pink: '#F19CBB',
+					lightpink: '#FFC0CB',
+					cream: '#FFFDF8',
+					brown: '#725039',
+					gold: '#D4AF37',
 					white: '#FFFFFF',
-					green: 'hsl(139, 61%, 42%)', // Cor de contraste (10%)
+					lightbrown: '#8B614B',
 				},
 			},
 			borderRadius: {

@@ -1,6 +1,6 @@
+
 import React, { useEffect, useRef } from 'react';
 import { cn } from "@/lib/utils";
-import { FileText, BarChart4, Calculator, ShieldCheck, Receipt, FileSearch } from 'lucide-react';
 
 const Services = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -36,58 +36,89 @@ const Services = () => {
     };
   }, []);
 
-  const services = [{
-    icon: <FileText className="h-8 w-8" />,
-    title: "Contabilidade Empresarial",
-    description: "Escrituração contábil completa, elaboração de demonstrações financeiras e relatórios gerenciais personalizados."
-  }, {
-    icon: <BarChart4 className="h-8 w-8" />,
-    title: "Consultoria Fiscal",
-    description: "Planejamento tributário estratégico, recuperação de impostos e orientação sobre obrigações fiscais."
-  }, {
-    icon: <Calculator className="h-8 w-8" />,
-    title: "Departamento Pessoal",
-    description: "Administração completa da folha de pagamento, admissões, demissões e cumprimento das obrigações trabalhistas."
-  }, {
-    icon: <ShieldCheck className="h-8 w-8" />,
-    title: "Auditoria e Compliance",
-    description: "Verificação da conformidade com normas contábeis e fiscais, identificação de riscos e oportunidades."
-  }, {
-    icon: <Receipt className="h-8 w-8" />,
-    title: "Gestão Financeira",
-    description: "Controle de fluxo de caixa, projeções financeiras e análise de indicadores para tomada de decisão."
-  }, {
-    icon: <FileSearch className="h-8 w-8" />,
-    title: "Legalização de Empresas",
-    description: "Abertura, alteração e encerramento de empresas, com assessoria em todas as etapas do processo."
-  }];
+  const products = [
+    {
+      title: "Pães Artesanais",
+      description: "Diversos tipos de pães feitos com ingredientes selecionados e fermentação natural.",
+      image: "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3"
+    },
+    {
+      title: "Bolos Especiais",
+      description: "Bolos para todas as ocasiões: aniversários, casamentos, confraternizações e muito mais.",
+      image: "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?q=80&w=2050&auto=format&fit=crop&ixlib=rb-4.0.3"
+    },
+    {
+      title: "Salgados Assados",
+      description: "Salgados assados perfeitos para festas, eventos ou para um lanche especial.",
+      image: "https://images.unsplash.com/photo-1604467715878-83e57e8bc129?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3"
+    },
+    {
+      title: "Salgados Fritos",
+      description: "Deliciosos salgados fritos como coxinha, bolinha de queijo, risoles e muito mais.",
+      image: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+    },
+    {
+      title: "Pudins",
+      description: "Pudins cremosos de diversos sabores, perfeitos para sobremesa.",
+      image: "https://images.unsplash.com/photo-1624616116225-6d6b6b48cce4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+    },
+    {
+      title: "Cosméticos",
+      description: "Linha completa de cosméticos para complementar o seu cuidado pessoal.",
+      image: "https://images.unsplash.com/photo-1571781418606-70265b9cce90?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+    },
+  ];
 
-  return <section id="services" ref={sectionRef} className="bg-accounting-lightgray/30 py-10">
-      <div className="section-container py-10">
-        <div className="text-center mb-8">
+  return (
+    <section id="services" ref={sectionRef} className="bg-delicia-cream py-20">
+      <div className="section-container">
+        <div className="text-center mb-16">
           <h2 className="section-title" ref={el => elementsRef.current[0] = el}>
-            Nossos Serviços
+            Nossos Produtos
           </h2>
-          <p className="section-subtitle mb-6" ref={el => elementsRef.current[1] = el}>
-            Oferecemos soluções contábeis completas e personalizadas para apoiar o crescimento do seu negócio.
+          <p className="section-subtitle" ref={el => elementsRef.current[1] = el}>
+            Conheça nossa variedade de produtos feitos com carinho e ingredientes selecionados
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => <div key={index} className="bg-white rounded-lg p-5 shadow-sm transition-all duration-300 hover:shadow-md hover:translate-y-[-5px] opacity-0" ref={el => elementsRef.current[2 + index] = el}>
-              <div className="w-12 h-12 bg-accounting-navy/5 rounded-full flex items-center justify-center mb-4 text-accounting-blue">
-                {service.icon}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product, index) => (
+            <div 
+              key={index} 
+              className="product-card opacity-0"
+              ref={el => elementsRef.current[2 + index] = el}
+            >
+              <div className="relative h-56 overflow-hidden">
+                <img 
+                  src={product.image} 
+                  alt={product.title} 
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+                  <div className="p-6">
+                    <h3 className="text-white font-display text-2xl mb-1">{product.title}</h3>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-accounting-navy font-display font-semibold text-xl mb-2">
-                {service.title}
-              </h3>
-              <p className="text-accounting-gray">
-                {service.description}
-              </p>
-            </div>)}
+              <div className="p-6">
+                <p className="text-delicia-brown">{product.description}</p>
+                <a 
+                  href="#contact" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="mt-4 inline-block text-delicia-pink font-medium hover:text-delicia-pink/80 transition-colors"
+                >
+                  Saiba mais →
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default Services;
