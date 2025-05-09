@@ -70,7 +70,7 @@ const Services = () => {
       id: "pudins",
       title: "Pudins",
       description: "Pudins cremosos de diversos sabores, perfeitos para sobremesa.",
-      image: "https://images.unsplash.com/photo-1624616116225-6d6b6b48cce4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+      image: "https://images.unsplash.com/photo-1605256107786-c598074d5027?q=80&w=1372&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       id: "cosmeticos",
