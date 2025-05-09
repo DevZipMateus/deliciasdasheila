@@ -1,12 +1,8 @@
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { cn } from "@/lib/utils";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Button } from "@/components/ui/button";
-import { Check, Send } from "lucide-react";
 
 const Services = () => {
-  const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -79,32 +75,6 @@ const Services = () => {
     },
   ];
 
-  const handleProductSelect = (productId: string) => {
-    setSelectedProducts(prev => {
-      if (prev.includes(productId)) {
-        return prev.filter(id => id !== productId);
-      } else {
-        return [...prev, productId];
-      }
-    });
-  };
-
-  const handleSendWhatsApp = () => {
-    const selectedItems = products
-      .filter(product => selectedProducts.includes(product.id))
-      .map(product => product.title)
-      .join('\n- ');
-
-    if (selectedItems.length === 0) {
-      alert('Por favor, selecione ao menos um produto para continuar.');
-      return;
-    }
-
-    const message = `Olá! Estou interessado(a) nos seguintes produtos:\n- ${selectedItems}\n\nGostaria de mais informações, por favor.`;
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/5566992144530?text=${encodedMessage}`, '_blank');
-  };
-
   return (
     <section id="services" ref={sectionRef} className="bg-delicia-cream py-20">
       <div className="section-container">
@@ -115,9 +85,6 @@ const Services = () => {
           <p className="section-subtitle" ref={el => elementsRef.current[1] = el}>
             Conheça nossa variedade de produtos feitos com carinho e ingredientes selecionados
           </p>
-          <p className="mt-4 text-delicia-brown">
-            Selecione os produtos que deseja e envie sua lista pelo WhatsApp
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -127,14 +94,6 @@ const Services = () => {
               className="product-card opacity-0 relative"
               ref={el => elementsRef.current[2 + index] = el}
             >
-              <div className="absolute top-4 right-4 z-20 bg-white rounded-full p-1.5 shadow-md">
-                <Checkbox
-                  id={`product-${product.id}`}
-                  checked={selectedProducts.includes(product.id)}
-                  onCheckedChange={() => handleProductSelect(product.id)}
-                  className="data-[state=checked]:bg-delicia-pink data-[state=checked]:text-white border-delicia-pink"
-                />
-              </div>
               <div className="relative h-56 overflow-hidden">
                 <img 
                   src={product.image} 
@@ -149,25 +108,9 @@ const Services = () => {
               </div>
               <div className="p-6">
                 <p className="text-delicia-brown">{product.description}</p>
-                <label 
-                  htmlFor={`product-${product.id}`}
-                  className="mt-4 inline-block text-delicia-pink font-medium hover:text-delicia-pink/80 transition-colors cursor-pointer"
-                >
-                  {selectedProducts.includes(product.id) ? 'Selecionado ✓' : 'Selecionar →'}
-                </label>
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="mt-12 text-center">
-          <Button 
-            onClick={handleSendWhatsApp}
-            className="bg-delicia-pink hover:bg-delicia-pink/90 text-white px-6 py-6 rounded-full text-lg"
-          >
-            <Send className="mr-2 h-5 w-5" />
-            Enviar seleção por WhatsApp ({selectedProducts.length} {selectedProducts.length === 1 ? 'item' : 'itens'})
-          </Button>
         </div>
       </div>
     </section>
