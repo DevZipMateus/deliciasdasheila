@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { cn } from "@/lib/utils";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
-import { Send, Plus, Minus } from "lucide-react";
+import { Send, Plus, Minus, Instagram } from "lucide-react";
 
 const Services = () => {
   const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
@@ -207,14 +207,28 @@ const Services = () => {
           ))}
         </div>
         
-        <div className="mt-12 text-center">
-          <Button 
-            onClick={handleSendWhatsApp}
-            className="bg-delicia-pink hover:bg-delicia-pink/90 text-white px-6 py-6 rounded-full text-lg"
-          >
-            <Send className="mr-2 h-5 w-5" />
-            Enviar seleção por WhatsApp ({totalSelectedItems} {totalSelectedItems === 1 ? 'item' : 'itens'})
-          </Button>
+        <div className="mt-12 text-center space-y-4">
+          <div className="flex flex-col md:flex-row gap-4 justify-center">
+            <Button 
+              onClick={handleSendWhatsApp}
+              className="bg-delicia-pink hover:bg-delicia-pink/90 text-white px-6 py-6 rounded-full text-lg"
+            >
+              <Send className="mr-2 h-5 w-5" />
+              Enviar seleção por WhatsApp ({totalSelectedItems} {totalSelectedItems === 1 ? 'item' : 'itens'})
+            </Button>
+            
+            <Button
+              onClick={() => window.open('https://www.instagram.com/delicias__da_sheila/', '_blank')}
+              className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 text-white px-6 py-6 rounded-full text-lg"
+            >
+              <Instagram className="mr-2 h-5 w-5" />
+              Pedir pelo Instagram
+            </Button>
+          </div>
+          
+          <p className="text-sm text-delicia-brown/70">
+            Você também pode fazer seu pedido diretamente pelo nosso Instagram
+          </p>
         </div>
       </div>
     </section>
