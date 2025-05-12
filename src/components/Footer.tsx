@@ -26,7 +26,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://www.instagram.com/delicias__da_sheila/" 
+                href="https://www.instagram.com/_delicias_dasheila/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-delicia-pink/20 p-2 rounded-full hover:bg-delicia-pink/30 transition-colors"

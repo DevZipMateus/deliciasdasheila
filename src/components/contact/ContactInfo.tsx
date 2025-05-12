@@ -72,8 +72,8 @@ const ContactInfo = ({ setRef }: { setRef: (el: HTMLDivElement | null) => void }
             <div>
               <h4 className="font-medium text-delicia-brown">Instagram</h4>
               <p className="text-delicia-brown/70">
-                <a href="https://www.instagram.com/delicias__da_sheila/" target="_blank" rel="noopener noreferrer" className="hover:text-delicia-pink transition-colors">
-                  @delicias__da_sheila
+                <a href="https://www.instagram.com/_delicias_dasheila/" target="_blank" rel="noopener noreferrer" className="hover:text-delicia-pink transition-colors">
+                  @_delicias_dasheila
                 </a>
               </p>
             </div>
